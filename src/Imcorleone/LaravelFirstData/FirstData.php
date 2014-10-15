@@ -12,14 +12,15 @@ class FirstData
 	public function __construct() 
 	{
 		$this->config 		= Config::get('laravel-first-data::config');
-
-		$this->firstDataApi = new FirstDataApi($this->config['API_LOGIN'], $this->config['API_KEY'], $this->config['demo']);
+	
+		$this->firstDataApi = new FirstDataApi($this->config['API_KEY'], $this->config['API_LOGIN'], $this->config['demo']);
 
 		return $this;
 	}
 
 	private function process($cardDetails, $transType, $referenceNumber, $amount = 0) {
 		$firstData = $this->firstDataApi;
+		// $firstData->setApiVersion("12");
 		$firstData->setTransactionType($transType);
 		$firstData->setCreditCardType($cardDetails['type']);
 		$firstData->setCreditCardNumber($cardDetails['number']);
@@ -28,15 +29,15 @@ class FirstData
 		$firstData->setAmount($amount);
 		$firstData->setReferenceNumber($referenceNumber);
 
-		if($cardDetails['zipcode']) {
+		if(isset($cardDetails['zipcode'])) {
 			$firstData->setCreditCardZipCode($cardDetails['zipcode']);
 		}
 
-		if($cardDetails['cvv']) {
+		if(isset($cardDetails['cvv'])) {
 			$firstData->setCreditCardVerification($cardDetails['cvv']);
 		}
 
-		if($cardDetails['address']) {
+		if(isset($cardDetails['address'])) {
 			$firstData->setCreditCardAddress($cardDetails['address']);
 		}
 
@@ -56,8 +57,18 @@ class FirstData
 	{
 		$firstData = $this->process($cardDetails, FirstDataApi::TRAN_PURCHASE, $transNumber, $amount);
 
-		return !$firstData->isError();
-		
+		return $firstData;
+
+	}
+
+	public function getErrorMessage()
+	{
+		return $this->firstDataApi->getErrorMessage();
+	}
+
+	public function api()
+	{
+		return $this->firstDataApi;
 	}
 
 

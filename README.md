@@ -70,7 +70,10 @@ Parameters:
 * `card Details` - see card Details list
 * `transaction number` - reference number for the purchase
 * `amount` - the amount to be purchased using the card
-
+```php
+	$firstData = App::make('firstdata');
+	$firstData->auth($cardDetails, $transNumber, $amount); 
+```
 
 ###CARD DETAILS LIST
 

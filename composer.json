@@ -1,0 +1,21 @@
+{
+    "name": "imcorleone/laravel-first-data",
+    "description": "First Data Wrapper for Laravel 4",
+    "authors": [
+        {
+            "name": "Gian Santillan",
+            "email": "giansantillan18@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "vinceg/firstdataapi": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Imcorleone\\LaravelFirstData": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

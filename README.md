@@ -19,7 +19,7 @@ To install package you have to include the following in the `composer.json`
 ),
 'providers' => array(
 	...
-	Imcorleone\LaravelFirstData\LaravelFirstDataServiceProvider'
+	'Imcorleone\LaravelFirstData\LaravelFirstDataServiceProvider'
 	...
 )
 
@@ -64,6 +64,13 @@ As the time of this writing and commit there is two functions that the API can p
 	$firstData->auth($cardDetails); //returns true or false
 ```
 First Data Pre Authentication sends a **Zero Dollar Value** to the First Data Entry Point
+
+###PURCHASE
+Parameters:
+* `card Details` - see card Details list
+* `transaction number` - reference number for the purchase
+* `amount` - the amount to be purchased using the card
+
 
 ###CARD DETAILS LIST
 

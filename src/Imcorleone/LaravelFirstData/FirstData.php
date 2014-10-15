@@ -52,5 +52,13 @@ class FirstData
 		return !$firstData->isError();
 	}
 
+	public function purchase(array $cardDetails, $transNumber, $amount) 
+	{
+		$firstData = $this->process($cardDetails, FirstDataApi::TRAN_PURCHASE, $transNumber, $amount);
+
+		return !$firstData->isError();
+		
+	}
+
 
 }

@@ -11,10 +11,15 @@
         "illuminate/support": "4.2.*",
         "vinceg/firstdataapi": "dev-master"
     },
+    
+    "require-dev": {
+        "vinceg/firstdataapi": "dev-master"
+    },
+
     "autoload": {
         "psr-0": {
             "Imcorleone\\LaravelFirstData": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }

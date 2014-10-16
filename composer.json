@@ -9,11 +9,7 @@
     ],
     "require": {
         "illuminate/support": "4.2.*",
-        "vinceg/firstdataapi": "dev-master"
-    },
-    
-    "require-dev": {
-        "vinceg/firstdataapi": "dev-master"
+        "vinceg/firstdataapi": "@dev"
     },
 
     "autoload": {
@@ -21,5 +17,5 @@
             "Imcorleone\\LaravelFirstData": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }

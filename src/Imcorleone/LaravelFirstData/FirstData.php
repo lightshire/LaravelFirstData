@@ -14,7 +14,7 @@ class FirstData
 		$this->config 		= Config::get('laravel-first-data::config');
 	
 		$this->firstDataApi = new FirstDataApi($this->config['API_KEY'], $this->config['API_LOGIN'], $this->config['demo']);
-		FirstData::$CURL_OPTS  = array(
+		FirstDataApi::$CURL_OPTS  = array(
 	            CURLOPT_CONNECTTIMEOUT => 30,
 	            CURLOPT_RETURNTRANSFER => true,
 	            CURLOPT_TIMEOUT        => 60,

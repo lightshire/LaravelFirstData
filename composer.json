@@ -17,5 +17,5 @@
             "Imcorleone\\LaravelFirstData": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dist"
 }
